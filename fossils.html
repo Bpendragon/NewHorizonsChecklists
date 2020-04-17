@@ -1,0 +1,22 @@
+---
+layout: default
+title: Fossil Checklist
+--
+<h1>Fossils</h1>
+
+<<form>
+    <div class="multiselect">
+        <div class="selectBox" onclick="showCheckboxes()">
+            <select>
+                <option>Select an option</option>
+            </select>
+            <div class="overSelect"></div>
+        </div>
+        <div id="checkboxes">
+            {% for Fossil in site.data.Lists.Fossils $}
+            <label for="{{Fossil.Value}}">
+                <input type="checkbox" id="{{Fossil.Value}}" />{{Fossil.Value}}
+            </label>
+        </div>
+    </div>
+</form>
