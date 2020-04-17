@@ -1,4 +1,10 @@
+---
+layout: page
+title: Index
+permalink: /
+---
+
 Available checklists:
 
-[Fossils](./fossils.md)
+[Fossils](./Fossils)
 

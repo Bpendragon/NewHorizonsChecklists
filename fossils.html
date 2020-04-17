@@ -1,22 +1,34 @@
 ---
 layout: default
 title: Fossil Checklist
---
+permalink: /Fossils/
+---
 <h1>Fossils</h1>
 
-<<form>
-    <div class="multiselect">
-        <div class="selectBox" onclick="showCheckboxes()">
-            <select>
-                <option>Select an option</option>
-            </select>
-            <div class="overSelect"></div>
+<form>
+    <div class="row">
+        <div id="checkboxes" class="column">
+            {% for Fossil in site.data.lists.fossils %}
+            <div>
+                <label for="{{Fossil}}">
+                    <input type="checkbox" id="{{Fossil}}" />{{Fossil}}
+                </label>
+            </div>
+            {% endfor %}
         </div>
-        <div id="checkboxes">
-            {% for Fossil in site.data.Lists.Fossils $}
-            <label for="{{Fossil.Value}}">
-                <input type="checkbox" id="{{Fossil.Value}}" />{{Fossil.Value}}
-            </label>
+
+
+        <div class="column">
+            <h2>Fossils Acquired</h2>
+            {% for Fossil in site.data.lists.fossils %}
+            <div id="have{{Fossil}}">{{Fossil}}</div>
+            {% endfor %}
+        </div>
+        <div class="column">
+            <h2>Fossils needed</h2>
+            {% for Fossil in site.data.lists.fossils %}
+            <div style="display:none" id="need{{Fossil}}">{{Fossil}}</div>
+            {% endfor %}
         </div>
     </div>
 </form>
